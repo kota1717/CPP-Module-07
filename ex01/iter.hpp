@@ -6,23 +6,22 @@
 /*   By: ikota <ikota@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/01 19:01:40 by ikota             #+#    #+#             */
-/*   Updated: 2026/10/01 19:04:53 by ikota            ###   ########.fr       */
+/*   Updated: 2026/10/02 13:05:07 by ikota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EX01_ITER_HPP_
 #define EX01_ITER_HPP_
 
+#include <cstddef>
 
+template <typename T, typename FuncType>
+void iter(T* array, const std::size_t num_elems, FuncType func) {
+	if (!array)
+		return;
+	for (std::size_t i = 0; i < num_elems; i++) {
+		func(array[i]);
+	}
+}
 
 #endif
-
-// 3つのパラメータを受け取り、何も返さない関数テンプレート `iter` を実装してください。
-// • 最初のパラメータは配列のアドレスです。
-// • 2番目のパラメータは配列の長さで、const 値として渡されます。
-// • 3番目のパラメータは配列の各要素に対して呼び出される関数です。
-// テストケースを含む main.cpp ファイルを提出してください。テスト実行ファイルを生成できる十分なコードを含めてください。
-// `iter` 関数テンプレートは、あらゆる種類の配列で動作するように設計してください。
-// 3番目のパラメータは、インスタンス化された関数テンプレートでも構いません。
-// 3番目のパラメータとして渡す関数は、文脈に応じて const 参照または非 const 参照で引数を受け取ることができます。
-// `iter` 関数で const 要素と非 const 要素の両方を適切に処理する方法について、十分に検討してください。
