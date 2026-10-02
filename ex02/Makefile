@@ -1,4 +1,4 @@
-TARGET := array
+TARGET := class_template
 
 CXX := c++
 CXXFLAGS := -Wall -Werror -Wextra -std=c++98
@@ -7,7 +7,6 @@ RMDIR := rm -rf
 OBJ_DIR := obj
 
 SRCS := main.cpp \
-				Array.cpp \
 
 OBJS := $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 
